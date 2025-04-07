@@ -26,13 +26,10 @@ function checkStrength(password) {
 }
 
 // Show/Hide password
+// Show/Hide password
 toggleBtn.addEventListener("click", () => {
-  const type = passwordInput.getAttribute("type");
-  if (type === "password") {
-    passwordInput.setAttribute("type", "text");
-    toggleBtn.textContent = "Hide";
-  } else {
-    passwordInput.setAttribute("type", "password");
-    toggleBtn.textContent = "Show";
-  }
+  const isPassword = passwordInput.type === "password";
+  passwordInput.type = isPassword ? "text" : "password";
+  toggleBtn.textContent = isPassword ? "Hide" : "Show";
 });
+
